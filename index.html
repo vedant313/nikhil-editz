@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Video Editor & Graphic Designer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --secondary: #4D47C3;
+            --accent: #FF6584;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gray: #6C757D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .section-title h2 span {
+            color: var(--primary);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        #hero {
+            padding-top: 120px;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(255, 101, 132, 0.1));
+            text-align: center;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+            color: var(--primary);
+        }
+        
+        /* About Section */
+        #about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .skill-tag {
+            background-color: var(--light);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Services Section */
+        #services {
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(108, 99, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        /* Portfolio Section */
+        #portfolio {
+            background-color: white;
+        }
+        
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            border: none;
+            background-color: transparent;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 30px;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .portfolio-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(77, 71, 195, 0.9), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .portfolio-overlay p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials Section */
+        #testimonials {
+            background-color: var(--light);
+        }
+        
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            margin: 0 15px;
+        }
+        
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 3px solid var(--primary);
+        }
+        
+        .client-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .client-info h4 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .client-info span {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background-color: white;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .contact-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .contact-text a {
+            color: var(--gray);
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--primary);
+        }
+        
+        .contact-form {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-text {
+                margin-bottom: 30px;
+            }
+            
+            .about-image {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background-color: white;
+                width: 100%;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">Nikhil Editz</a>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bdc3b47f-3828-411e-b9ec-7d7b60a8fac5.png" alt="Professional Indian video editor working with dual monitors in a modern home office setup" />
+                </div>
+                <div class="hero-text">
+                    <h1>Hi, I'm <span>Nikhil</span></h1>
+                    <p>A professional video editor & graphic designer creating stunning visual content that helps brands and creators stand out.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Get Started Today</a>
+                        <a href="#portfolio" class="btn btn-outline">View My Work</a>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://wa.me/9356285981" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/nikhil_editz_1" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:nikhileditz1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About <span>Me</span></h2>
+                <p>Get to know more about me and what drives my creative process</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Creative Professional Based in India</h3>
+                    <p>With 3+ years of experience in video editing and graphic design, I specialize in creating engaging content that tells stories and promotes brands effectively. My work is characterized by clean aesthetics, smooth animations, and attention to detail.</p>
+                    <p>I'm passionate about transforming raw footage into compelling narratives that resonate with audiences. Whether it's a YouTube video, Instagram reel, or business promotion, each project receives my full creative attention.</p>
+                    <div class="skills-list">
+                        <span class="skill-tag">Adobe Premiere Pro</span>
+                        <span class="skill-tag">After Effects</span>
+                        <span class="skill-tag">Photoshop</span>
+                        <span class="skill-tag">Illustrator</span>
+                        <span class="skill-tag">Davinci Resolve</span>
+                        <span class="skill-tag">Motion Graphics</span>
+                        <span class="skill-tag">Color Grading</span>
+                        <span class="skill-tag">Visual Storytelling</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://fff9bcab56495c4f0eb5db321422c9ad5a43acc014ae871a145d936-apidata.googleusercontent.com/download/storage/v1/b/nikhileditz/o/WhatsApp%20Image%202025-06-30%20at%2021.57.43.jpeg?jk=AXbWWmky87iPbU0kwlDuteVGLQhRJ_h9xeb-2W1xEVPC-8gKPfo_dwtljzDQdo7fsu9CaDazBt0HLtJtI1sNLfiEack00J-yuyEC3s6TuYn5RzGOfZKywn2WSH7tLwv43s_UWmH9706M8A64NIUNTIFQQoQQgisCxqMsfI6Ir3430QvFs4YY0oeHxzHHif2DYJSfUD633Xq6Hhdcr-89d22TTH6RAD0yxgMG9J8PaVn9MV0FPwoldDsB1rOMQSh-uC32rZ4z9PJql6cZaSVAzOugxSjFQCi0R8CDSqc1qUUxClCkDDhSDb-kghyDiTtumPRRw1vZg5PSxUVNh_iR37zMisPVMQv-pQSJtRh1Q9iC6BSdQaxIkhqrM4yIfDCQ7MYKcNp1mwfWUTpREXbk54h0kW-bRpNFrmGMAV-xoUkhMl0N52JCYOMv6IAql_VICCJyAR8nSTn6TjgK_Pfff3FiUWZef5QO0I7SJlws4sas3O2m0dSCPCvZopkr6sVNkKj7ve4kgLCzwZ1UzwwqqeLd-m_fQOXEoXYdP4WKt5O0v57_kMt_jDJCDl3oY_ap-VRZF0hmdbz85wT4vKg56Rr97q5bjqBqAFNVpN5A6OK4JF9pQ9041lo3M4l73L1IrE4aXntMEkYQ9OPPfyO2YntQF-_bn3NeNdYlGH98lRUFGoPoi3R0jG7VZyxrGD6_Cap0E-UUvwXn621G2IIfWuKJ6eV5x7GpdK0hBatiL7HN-VLl2qggKaYhtXrn94ppwuQEVQHdneTqFbNey0bpu_5c_gPKJOW-NLUp6Bn197lQlni_86VM_HZFdLYlxpcstVsBt-u8Z_yyzMCVhq1_qVnCpy3MCg_U14557FkODo_8EReizyG9huwZAuCvl872iX-wpw8DC6QujzYTLd2lpt850bSlr0rGGAz0oJkYWWsMD5UAKjju1b7hL6zyNV9TWV_I1rH80mXO_9nZ6SibaSyaerCnPm1SgffxXO4NMkQ-SFX3JgNHLxm72wS6g2ad9UXoOGzyR1p0PQlB2BNLlsgjynVoDuS3vKM2RNEA_C6JqnQwDD4a7KdPogsZDD-SO69hrm_IaC0gHEvdvUWFU2hC5CSfTFqDxIKT3N7PQ-_7gxf1w8PYv_d7TLoQQaUg0AzJnsoQdE_oJ5G9fyiFjlB2zVEbciG3mVNhq28S_u54UhDzsqIOF5ZH&isca=1" alt="Video editor working at a workstation with multiple screens showing Adobe Premiere Pro interface" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>My <span>Services</span></h2>
+                <p>Quality services that help your content stand out and reach your audience effectively</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Video Editing</h3>
+                    <p>Professional editing for YouTube videos, social media content, commercials, and more with polished transitions, effects, and pacing.</p>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%;">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-photo-video"></i>
+                    </div>
+                    <h3>Instagram Reels</h3>
+                    <p>Eye-catching short-form video content optimized for Instagram's algorithm with trending effects, music, and captions.</p>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%;">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>Ad Creation</h3>
+                    <p>Conversion-focused promotional videos for Facebook, Instagram, and YouTube ads that drive sales and engagement.</p>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%;">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3>Logo Animation</h3>
+                    <p>Professional logo animations that bring your brand identity to life with smooth motion and visual impact.</p>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%;">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Posters, social media graphics, banners, and other visual assets designed to your brand specifications.</p>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%;">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stream"></i>
+                    </div>
+                    <h3>Custom Packages</h3>
+                    <p>Tailored services combining multiple offerings for clients needing comprehensive content support.</p>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%;">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>My <span>Work</span></h2>
+                <p>A selection of my recent projects showcasing different styles and techniques</p>
+            </div>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="video-editing">Video Editing</button>
+                <button class="filter-btn" data-filter="reels">Reels</button>
+                <button class="filter-btn" data-filter="animation">Animation</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="video-editing">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cd76632e-fbf4-4a00-8940-35e3573b35a1.png" alt="Before and after screenshot of YouTube facecam video editing transformation showing professional color grading" />
+                    <div class="portfolio-overlay">
+                        <h3>YouTube Facecam Edit</h3>
+                        <p>Complete editing including color correction, cuts, sound design</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="reels">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d89af947-bc0d-4385-b6a0-1c161e1d7c06.png" alt="Instagram reel for fashion brand showing seamless transitions and trending music" />
+                    <div class="portfolio-overlay">
+                        <h3>Fashion Brand Reel</h3>
+                        <p>High-energy social media content with trendy transitions</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="video-editing">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/00b66331-00e6-442b-a1f3-d8eb459e79d2.png" alt="Product commercial video showing smooth camera movements and enhanced product shots" />
+                    <div class="portfolio-overlay">
+                        <h3>Product Commercial</h3>
+                        <p>Engaging product showcase with motion graphics</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="animation">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9c518c80-661c-4fa4-ad8d-e77de796b447.png" alt="Animated logo reveal sequence with smooth 3D rotation effects" />
+                    <div class="portfolio-overlay">
+                        <h3>Logo Animation</h3>
+                        <p>Professional logo reveal with sound design</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9e69de0-f854-441c-9897-ea57d5021182.png" alt="Modern minimalist concert poster design with bold typography" />
+                    <div class="portfolio-overlay">
+                        <h3>Event Poster</h3>
+                        <p>Eye-catching promotional graphic design</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="reels">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ae938ca8-e3d4-4bdb-94d5-0a9b6ec32e9d.png" alt="Restaurant promotion reel showing delicious food shots with text animations" />
+                    <div class="portfolio-overlay">
+                        <h3>Restaurant Promotion</h3>
+                        <p>Mouth-watering food content with captions</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://instagram.com/nikhil_editz_1" class="btn btn-primary">See More on Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client <span>Testimonials</span></h2>
+                <p>What my clients say about working with me</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="client-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fb9156e5-b4fb-4499-8e51-26c5b8cfcd38.png" alt="Portrait of satisfied business owner client smiling" />
+                    </div>
+                    <p>"Working with [Your Name] transformed our social media presence. The reels he created went viral and brought us many new customers. Highly recommend!"</p>
+                    <div class="client-info">
+                        <h4>Rajesh Mehta</h4>
+                        <span>Small Business Owner</span>
+                    </div>
+                </div>
+                <div class="testimonial-card" style="display: none;">
+                    <div class="client-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/eeba6e9f-1221-45b5-b109-00f890c94726.png" alt="Portrait of YouTuber client giving thumbs up" />
+                    </div>
+                    <p>"As a YouTuber, having professionally edited videos makes all the difference. My subscriber growth accelerated dramatically after [Your Name] started editing my videos."</p>
+                    <div class="client-info">
+                        <h4>Priya Patel</h4>
+                        <span>YouTube Creator</span>
+                    </div>
+                </div>
+                <div class="testimonial-card" style="display: none;">
+                    <div class="client-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6974bcfe-88fe-4f6d-ab58-c0f66c36465c.png" alt="Portrait of marketing manager looking professional" />
+                    </div>
+                    <p>"The ad videos created were exactly what we needed - professional, engaging, and effective at driving conversions. Will definitely work together again."</p>
+                    <div class="client-info">
+                        <h4>Amit Sharma</h4>
+                        <span>Marketing Manager</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In <span>Touch</span></h2>
+                <p>Ready to elevate your content? Reach out to discuss your project</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>Dhule, Maharashtra</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <a href="mailto:bhavsarnikhil040@gmail.com">bhavsarnikhil040@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>WhatsApp</h3>
+                            <a href="https://wa.me/9356285981">+91 9356285981</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Instagram</h3>
+                            <a href="https://instagram.com/nikhil_editz_1">@nikhil_editz_1</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Needed</label>
+                            <select id="service" name="service" style="width: 100%; padding: 12px 15px; border-radius: 5px; border: 1px solid #ddd; font-size: 1rem;">
+                                <option value="video-editing">Video Editing</option>
+                                <option value="reels">Instagram Reels</option>
+                                <option value="ad-creation">Ad Creation</option>
+                                <option value="logo-animation">Logo Animation</option>
+                                <option value="graphic-design">Graphic Design</option>
+                                <option value="custom-package">Custom Package</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Let's create something amazing together</p>
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="https://wa.me/yourwhastappnumber" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/yourusername" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:youremail@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="copyright">© 2023 Nikhil Ediz. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+        
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            hamburger.innerHTML = nav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetSection = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if(nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
+        // Portfolio Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                
+                portfolioItems.forEach(item => {
+                    if(filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Simple testimonial slider
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        let currentTestimonial = 0;
+        
+        function showTestimonial(index) {
+            testimonialCards.forEach((card, i) => {
+                card.style.display = i === index ? 'block' : 'none';
+            });
+        }
+        
+        // Initial display
+        showTestimonial(0);
+        
+        // Rotate testimonials every 5 seconds
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+        
+        // Form submission (would connect to backend in production)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
